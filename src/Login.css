@@ -18,7 +18,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.698);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    background: rgb(2, 2, 2);
+    background: rgb(129, 174, 216);
     backdrop-filter: blur(10px);
     text-align: center;
   }
@@ -78,7 +78,7 @@ body {
   
   /* Custom Button Colors */
   .submit {
-    background: #28a745;
+    background: #e6ae20;
     color: white;
   }
   
@@ -88,7 +88,7 @@ body {
   }
   
   button[type="submit"] {
-    background-color: #28a745 !important; /* Green color */
+    background-color: #e6ae20 !important; /* Green color */
     color: white !important;
     border: none;
     padding: 10px 20px;

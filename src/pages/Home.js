@@ -7,7 +7,7 @@ import "../styles/Home.css";
 const Home = () => {
     const navigate = useNavigate(); // Get navigation function
 
-    const [totalInvoices, setTotalInvoices] = useState(0);
+    const [totalInvoices, setTotalInvoices] = useState(1); // Prevent division by 0
     const [paymentReceived, setPaymentReceived] = useState(0);
     const [pendingAmount, setPendingAmount] = useState(0);
 
@@ -16,7 +16,7 @@ const Home = () => {
 
     const [cloudExpenses, setCloudExpenses] = useState(0);
     const [otherExpenses, setOtherExpenses] = useState(0);
-    const [totalExpenses, setTotalExpenses] = useState(0);
+    const [totalExpenses, setTotalExpenses] = useState(1); // Prevent division by 0
 
     useEffect(() => {
         // ✅ Redirect to login if not authenticated
@@ -36,9 +36,12 @@ const Home = () => {
             receivedAmount += (parseFloat(invoice.price) * parseFloat(invoice.qty)) || 0;
         });
 
-        setTotalInvoices(totalInvoiceAmount);
-        setPaymentReceived(receivedAmount);
-        setPendingAmount(totalInvoiceAmount - receivedAmount);
+        // ✅ Ensure pending amount is not negative
+        const pendingAmt = Math.max(totalInvoiceAmount - receivedAmount, 0);
+
+        setTotalInvoices(Math.max(totalInvoiceAmount, 1)); // Prevent division by zero
+        setPaymentReceived(Math.min(receivedAmount, totalInvoiceAmount)); // Prevent >100%
+        setPendingAmount(pendingAmt);
 
         // Fetch Expense Data
         const expenses = JSON.parse(localStorage.getItem("expenses")) || [];
@@ -55,7 +58,7 @@ const Home = () => {
 
         setCloudExpenses(cloudExp);
         setOtherExpenses(otherExp);
-        setTotalExpenses(cloudExp + otherExp);
+        setTotalExpenses(Math.max(cloudExp + otherExp, 1)); // Prevent division by 0
 
         // Fetch Tax Data
         const payments = JSON.parse(localStorage.getItem("payments")) || [];
@@ -86,8 +89,8 @@ const Home = () => {
 
                     <section>
                         <h2>Tax Paid</h2>
-                        <ProgressBar label="Deducted at Source" value={taxDeducted} total={taxDeducted + advanceTax} color="#d2ae45" />
-                        <ProgressBar label="Advance Tax Paid" value={advanceTax} total={taxDeducted + advanceTax} color="#d2ae45" />
+                        <ProgressBar label="Deducted at Source" value={taxDeducted} total={Math.max(taxDeducted + advanceTax, 1)} color="#d2ae45" />
+                        <ProgressBar label="Advance Tax Paid" value={advanceTax} total={Math.max(taxDeducted + advanceTax, 1)} color="#d2ae45" />
                     </section>
 
                     <section>

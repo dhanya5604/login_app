@@ -1,0 +1,70 @@
+.expenses-container {
+    padding: 20px;
+  }
+  
+  .expenses-container {
+    margin-top: 80px; /* Adjust this based on navbar height */
+    padding-top: 20px; /* Ensures extra spacing */
+  }
+  
+
+  .new-expense-btn {
+    background-color: #d2ae45;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .new-expense-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .expense-form, .payment-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+  }
+  
+  .expense-form input, .expense-form select, .expense-form textarea,
+  .payment-form input, .payment-form select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .expense-form button, .payment-form button {
+    background-color: #81aed8;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .expense-form button:hover, .payment-form button:hover {
+    background-color: #5f90c0;
+  }
+  
+  .expenses-table, .payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .expenses-table th, .expenses-table td,
+  .payments-table th, .payments-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .expenses-table th, .payments-table th {
+    background-color: #81aed8;
+    color: white;
+  }
+  

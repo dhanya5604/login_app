@@ -1,0 +1,97 @@
+.invoice-container {
+    padding: 20px;
+}
+
+/* Invoice.css */
+
+/* Container */
+.invoice-container {
+    padding: 20px;
+}
+
+/* New Invoice Button */
+.new-invoice-btn {
+    background-color: #007bff; /* Modern blue color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-bottom: 15px;
+}
+
+.new-invoice-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Clear Invoices Button */
+.clear-invoices-btn {
+    background-color: #dc3545; /* Modern red color */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    margin-top: 15px; /* Adds space between table and button */
+}
+
+.clear-invoices-btn:hover {
+    background-color: #a71d2a; /* Darker shade on hover */
+}
+
+/* Invoice Table */
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.invoice-table th,
+.invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.invoice-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+
+.new-invoice-btn, .create-btn, .cancel-btn {
+    background-color: #d2ae45;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.invoice-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.invoice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Apply blue background to the table header */
+.invoice-table th {
+    background-color: #81aed8; /* Your theme's blue color */
+    color: white; /* White text for contrast */
+    padding: 10px;
+    text-align: left;
+}
+
+
+.invoice-table th, .invoice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
